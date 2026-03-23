@@ -17,7 +17,7 @@ const client = new Client({
         args: ['--no-sandbox', '--disable-setuid-sandbox']
     }
 });
-    
+
 // "BANCO DE DADOS" EM MEMÓRIA
 const usuarios = {};
 
@@ -150,3 +150,14 @@ client.on('message', async msg => {
 });
 
 client.initialize();
+
+const express = require('express');
+const app = express();
+
+app.get('/', (req, res) => {
+    res.send('Bot rodando');
+});
+
+app.listen(process.env.PORT || 3000, () => {
+    console.log('Servidor web ativo');
+});
