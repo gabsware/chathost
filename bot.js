@@ -12,10 +12,9 @@ const { Client, LocalAuth } = require('whatsapp-web.js');
 const client = new Client({
     authStrategy: new LocalAuth(),
     puppeteer: {
-        headless: true,
-        executablePath: require('puppeteer').executablePath(),
-        args: ['--no-sandbox', '--disable-setuid-sandbox']
-    }
+    headless: true,
+    args: ['--no-sandbox', '--disable-setuid-sandbox']
+}
 });
 
 // "BANCO DE DADOS" EM MEMÓRIA
